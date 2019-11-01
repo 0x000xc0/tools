@@ -1,0 +1,1 @@
+scp -P port 用户名@host:/../../ /kali路径

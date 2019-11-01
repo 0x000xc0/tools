@@ -1,0 +1,8 @@
+lsb_release -a
+ls -la /etc/cron*
+
+
+cat /etc/issue
+cat /etc/*-release
+
+uname -a

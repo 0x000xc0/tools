@@ -1,0 +1,4 @@
+nmap -p
+dmitry -p
+nc -nv -w 1 -z host 1-65535
+masscan --rate=10000 --ports 0-65535 host

@@ -1,0 +1,5 @@
+WPScan来对WordPress站点进行安全测试
+wpscan --url http://xxxxxx.
+ --enumerate p插件，u用户，t主题
+
+wpscan --url  192.168.0.141 -e u vp

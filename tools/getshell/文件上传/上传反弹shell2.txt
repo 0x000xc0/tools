@@ -1,0 +1,13 @@
+1.将Kali上的php-reverse-shell.php复制到物理机上，重命名，并修改监听的IP地址；
+
+2.并将文件上传到靶机上；
+
+3.在Kali上监听1234端口，并访问上传的文件；
+
+1.将Kali中的php-reverse-shell.php复制到物理机上重命名为gou.php，并修改其中的ip和监听的端口；
+
+2.合成新的图片Jack.jpg：copy 111.jpg/b + 111.php/a 222.jpg
+
+3. 上传jack.jpg
+
+

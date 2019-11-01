@@ -1,0 +1,9 @@
+python -c "import pty;pty.spawn('/bin/bash')"
+echo os.system("/bin/bash")
+
+
+awk 'BEGIN{system("/bin/bash")}'
+awk 'BEGIN{print("/bin/bash")}'
+
+
+

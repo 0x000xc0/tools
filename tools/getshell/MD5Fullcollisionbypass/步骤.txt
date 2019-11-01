@@ -1,0 +1,11 @@
+fastcoll_v1.0.0.5.exe -o kk0 kk1
+
+fastcoll_v1.0.0.5.exe -p kk1 -o kkk1 kkk2
+
+tail.exe -c 128 kkk1 > a
+
+type kk1 a > kkk3
+
+type kk1 a > kkk4
+
+certutil -hashfile xxx MD5

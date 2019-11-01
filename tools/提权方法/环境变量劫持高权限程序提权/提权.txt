@@ -1,0 +1,17 @@
+我们当前登录的是”Kane”账号，当前没有有效的内核exploit，也没有其他可以利用的suid文件
+
+只有在Kane的home目录下有一个“msgmike.”文件
+
+使用file命令查看下这个文件
+
+从截图可以看到，这是一个ELF 32位 LSB执行文件，但是当我们执行文件的时候，报错了
+
+通过报错信息我们可以看到msgmike调用cat命令读取/home/mike/msg.txt文件。
+
+我们可以通过设置bash的$path环境变量来利用，通常的$PATH包含：echo $PATH  
+
+然而当我们调用cat命令的时候，cat会从以上目录来寻找，如果我们添加.到$PATH环境变量，则会先从当前目录来寻找cat指令
+
+新建cat,添加执行权限：echo "/bin/bash" > cat    chmod 777 cat   export PATH=:./:$PATH
+
+这样当我们再次运行./msgmike命令的时候，就会触发当前目录下的cat(/bin/sh)，从而提权：./msg2root   ; /bin/bash -p
